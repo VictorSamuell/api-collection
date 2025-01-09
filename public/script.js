@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             pokemonInfoDiv.innerHTML = `
               <h2>${data.name.charAt(0).toUpperCase() + data.name.slice(1)}</h2>
               <img src="${data.sprite}" alt="${data.name}">
+              <p>Número na Pokédex: #${data.id}</p>
               <p>Altura: ${(data.height * 10)/100} m</p>
               <p>Peso: ${data.weight} hectogramas</p>
               <p>Tipos: ${data.types.join(', ')}</p> <!-- Exibe os tipos -->
