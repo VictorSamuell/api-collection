@@ -1,3 +1,9 @@
+#root{
+
+--branco : #fff;
+
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +20,7 @@ body {
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--branco);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -72,6 +78,12 @@ a.btn {
 
 }
 
+#pokemon-info{
+
+    display: none;
+
+
+}
 
 .pokemon-info {
     margin-top: 30px;
@@ -79,6 +91,7 @@ a.btn {
     background-color: #f1f1f1;
     border-radius: 10px;
     
+
 }
 
 .pokemon-info img {
@@ -94,6 +107,25 @@ a.btn {
 }
 
 .pokemon-info p {
+    padding: 2px;
     font-size: 1rem;
     color: #333;
 }
+
+.infop {
+    background-color: #f9f9f9; /* Cor de fundo suave */
+    border: 1px solid #ddd; /* Bordas finas e claras */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 15px; /* Espaço interno */
+    margin-top: 15px; /* Espaço em cima da div */
+    text-align: left; /* Texto alinhado à esquerda */
+    width: 268px; /* Deixa a largura proporcional ao container */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.infop p {
+    margin: 10px 0px; /* Espaço entre os parágrafos */
+    font-size: 1rem; /* Tamanho de texto moderado */
+    color: #333; /* Cor do texto */
+}
+

@@ -28,6 +28,7 @@ app.get('/api/pokemon/:name', async (req, res) => {
     // Filtra as informações para enviar uma resposta mais limpa
     const pokemonData = {
       name: response.data.name,
+      id: response.data.id,
       height: response.data.height,
       weight: response.data.weight,
       types: response.data.types.map(type => type.type.name),
