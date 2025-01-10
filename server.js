@@ -5,15 +5,15 @@ const axios = require('axios');
 const app = express();
 const port = 3000;
 
-// Servindo arquivos estáticos (CSS, JS)
+// usando o express para servir arquivos estaticos
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Rota para a landing page (index.html)
+//index.html
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Rota para a página de pesquisa (search.html)
+// search.html
 app.get('/search', (req, res) => {
   res.sendFile(path.join(__dirname, 'search.html'));
 });
@@ -22,10 +22,9 @@ app.get('/search', (req, res) => {
 app.get('/api/pokemon/:name', async (req, res) => {
   const pokemonName = req.params.name;  // Recebe o nome do Pokémon da URL
   try {
-    // Faz a requisição para a PokéAPI
+    // Faz a requisição para a API com o axios
     const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
 
-    // Filtra as informações para enviar uma resposta mais limpa
     const pokemonData = {
       name: response.data.name,
       id: response.data.id,
