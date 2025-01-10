@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('search-form').addEventListener('submit', async (event) => {
         event.preventDefault(); // Evitar o envio tradicional do formulário
-        const pokemonName = document.getElementById('pokemon-name').value;  
+        const pokemonName = document.getElementById('pokemon-name').value.toLowerCase();  
         const pokemonInfoDiv = document.getElementById('pokemon-info');
       
         try {
