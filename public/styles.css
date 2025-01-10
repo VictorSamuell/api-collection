@@ -1,6 +1,32 @@
+.color1 {color: #060606;}
+.color2 {color: #191d24;}
+.color3 {color: #36364b;}
+.color4 {color: #585975;}
+.color5 {color: #7c82a8;}
+
+.color1 {color: #06070c;}
+.color2 {color: #262e30;}
+.color3 {color: #46525e;}
+.color4 {color: #72838f;}
+.color5 {color: #9fbfc8;}
+
+
+/*paleta atual*/
+.color1 {color: #000000;}
+.color2 {color: #19111d;}
+.color3 {color: #525a61;}
+.color4 {color: #999caf;}
+.color5 {color: #e0ddef;}
+
 #root{
 
 --branco : #fff;
+--preto :#120907;
+--preto_menos_escuro :#182140;
+--azul_roxo :#4f5a93;
+--rosa :#8b9be7;
+--branco :#cad5ed;
+
 
 }
 
@@ -12,15 +38,29 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--branco);
+    background-color: #999caf;
     color: #333;
 }
 
 .container {
-    max-width: 600px;
+    max-width: 800px;
     margin: 50px auto;
     padding: 20px;
-    background-color: var(--branco);
+    background-color: #525a61;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.form-container{
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #525a61;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -30,43 +70,82 @@ body {
     justify-content: center;
 }
 
+.container_menu {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #525a61;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+}
+
+
 h1 {
     margin-bottom: 20px;
     font-size: 2rem;
-    color: #ffcc00;
+    color: #f8f8f8;
 }
 
-input[type="text"] {
-    padding: 10px;
-    margin-right: 10px;
-    font-size: 1rem;
-    width: 60%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+.search-input {
+
+  color: #060606;
+  max-width: 190px;
+  height: 44px;
+  background-color: #e9e9e9;
+  border-radius: .5rem;
+  padding: 0 1rem;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+   }
+   
+   .search-input:hover, .search-input:focus, .search-input-group:hover .search-input {
+    outline: none;
+    border-color: #3d3b32;
+  }
+   
+  .search-input-group:hover, .search-input:focus {
+    color: #05060fc2;
+  }
 
 button {
     padding: 10px 20px;
     margin: 10px;
     font-size: 1rem;
-    background-color: #ffcc00;
+    background-color: #e9e9e9;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 
 
-button:hover {
-    background-color: #e5b100;
+button:hover  {
+    background-color: #3d3b32;
+    color:#f8f8f8;
+    transform: scale(1.1);
 }
 
 a.btn {
     text-decoration: none;
-    color: #cec9c9;
-    background-color: #5555f0;
+    color: #181818;
+    background-color: #e9e9e9;
     padding: 10px 20px;
     border-radius: 3px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+a.btn:hover {
+    background-color: #3d3b32;
+    color:#f8f8f8;
+    transform: scale(1.1);
 }
 
 
@@ -74,13 +153,14 @@ a.btn {
 
     font-size: 26px;
     margin-bottom: 20px;
-    
+    color: #ebebeb;
 
 }
 
 #pokemon-info{
 
     display: none;
+    background-color: #61666b;
 
 
 }
@@ -88,7 +168,7 @@ a.btn {
 .pokemon-info {
     margin-top: 30px;
     padding: 20px;
-    background-color: #f1f1f1;
+    background-color: #f8f8f8;
     border-radius: 10px;
     
 
@@ -103,7 +183,7 @@ a.btn {
 
 .pokemon-info h2 {
     font-size: 1.5rem;
-    color: #ffcc00;
+    color: #ffffff;
 }
 
 .pokemon-info p {
@@ -113,19 +193,108 @@ a.btn {
 }
 
 .infop {
-    background-color: #f9f9f9; /* Cor de fundo suave */
-    border: 1px solid #ddd; /* Bordas finas e claras */
-    border-radius: 8px; /* Bordas arredondadas */
-    padding: 15px; /* Espaço interno */
-    margin-top: 15px; /* Espaço em cima da div */
-    text-align: left; /* Texto alinhado à esquerda */
-    width: 268px; /* Deixa a largura proporcional ao container */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #f8f8f8; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    padding: 15px; 
+    margin-top: 7px; 
+    margin-bottom: 15px;
+    text-align: left; 
+    width: 268px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    margin-left: auto;  
+    margin-right: auto;
 }
 
 .infop p {
-    margin: 10px 0px; /* Espaço entre os parágrafos */
-    font-size: 1rem; /* Tamanho de texto moderado */
-    color: #333; /* Cor do texto */
+    margin: 10px 0px; 
+    font-size: 1rem; 
+    color: #333; 
 }  
 
+.pokemon-link {
+    display: block;
+    margin-top: 20px; 
+    font-size: 1rem; 
+    color: #ffffff; 
+    text-decoration: none; 
+    text-align: center; 
+  }
+  
+  .pokemon-link:hover {
+    color: #c5c5c5; 
+    text-decoration: underline; 
+  }
+
+
+
+  .button2 {
+    display: inline-block;
+    transition: all 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    color: #090909;
+    padding: 0.7em 1.7em;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .button2:active {
+    color: #666;
+    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+  }
+  
+  .button2:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    top: 100%;
+    width: 140%;
+    height: 180%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  .button2:after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    top: 180%;
+    width: 160%;
+    height: 190%;
+    background-color: #009087;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  .button2:hover {
+    color: #ffffff;
+    border: 1px solid #009087;
+  }
+  
+  .button2:hover:before {
+    top: -35%;
+    background-color: #009087;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+  
+  .button2:hover:after {
+    top: -45%;
+    background-color: #009087;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+  

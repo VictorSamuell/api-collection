@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <p>Peso: ${(data.weight / 10).toFixed(1)} kg</p>
               <p>Tipos: ${data.types.join(', ')}</p> 
               </div>
+              <a href="https://www.pokemon.com/br/pokedex/${data.name}" class="button2" target="_blank">${data.name.charAt(0).toUpperCase() + data.name.slice(1)} na Pokédex oficial</a>
             `;
 
             pokemonInfoDiv.style.display = 'block';  

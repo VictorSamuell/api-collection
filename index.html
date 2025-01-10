@@ -8,11 +8,17 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="container_menu">
 
     <h1>Bem-vindo à Pokédex</h1>
     <p class="desc">Explore o mundo dos Pokémon!</p>
     <!-- Botão que leva à página de pesquisa -->
+
+    <!--  
+    app.get('/search', (req, res) => {
+  res.sendFile(path.join(__dirname, 'search.html'));
+});
+    -->
     <a href="/search" class="btn">Pesquisar Pokémon</a>
 
 
