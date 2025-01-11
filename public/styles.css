@@ -53,17 +53,19 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-height: 400px; /* Começa com um max-height pequeno */
+    height: 400px; 
     overflow: hidden; 
-    transition: max-height 0.6s ease-out; /* Faz a transição de max-height */
+    transition: height 0.6s ease-out; 
     
 }
-
-
 .container.expanded{
 
-    max-height: 900px;
+  height: 900px;
+    
 
+}
+.container.no-transition {
+  transition: none; 
 }
 
 .container_menu {
@@ -83,7 +85,7 @@ body {
 
 .form-container{
     max-width: 700px;
-    margin: 50px auto;
+    margin: 40px auto;
     padding: 20px;
     background-color: #657079;
     border-radius: 10px;
@@ -159,6 +161,19 @@ a.btn:hover {
     transform: scale(1.1);
 }
 
+.btn{
+
+    padding: 10px 20px;
+    margin: 20px;
+    font-size: 1rem;
+    background-color: #c9c7c7;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+
+}
 
 .desc{
 
@@ -311,3 +326,11 @@ a.btn:hover {
   }
   
   /*#009087 cor ciano do botao*/
+
+
+  .btn-container-search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
