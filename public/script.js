@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault(); // Evitar o envio tradicional do formulário
         const pokemonName = document.getElementById('pokemon-name').value.toLowerCase();  
         const pokemonInfoDiv = document.getElementById('pokemon-info');
-      
+        const containerDiv = document.getElementById('container');
+
         try {
           const response = await fetch(`/api/pokemon/${pokemonName}`);
           const data = await response.json();
@@ -25,7 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
               <a href="https://www.pokemon.com/br/pokedex/${data.name}" class="button2" target="_blank">${data.name.charAt(0).toUpperCase() + data.name.slice(1)} na Pokédex oficial</a>
             `;
 
-            pokemonInfoDiv.style.display = 'block';  
+            
+            pokemonInfoDiv.style.display = 'block'; 
+
+            containerDiv.classList.add('expanded');
+            
 
           }
         } catch (error) {

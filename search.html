@@ -5,17 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex - Pesquisa</title>
-    <link rel="stylesheet" href="/styles.css"> <!-- Usando o arquivo de estilo -->
+    <link rel="stylesheet" href="/styles.css"> 
 </head>
 <body>
 
-    <div class="container">
+    <div id="container" class="container">
         <div class="form-container">
+
             <h1>Pesquise por um Pokémon</h1>
+            
             <form id="search-form">
                 <input class="search-input" type="text" id="pokemon-name" placeholder="Digite o nome do Pokémon" required>
                 <button type="submit">Buscar</button>
             </form>
+            
             <div id="pokemon-info" class="pokemon-info"></div>
         </div>
     
@@ -29,6 +32,6 @@
 
     
 
-    <script src="/script.js"></script> <!-- Arquivo JS para interação -->
+    <script src="/script.js"></script> 
 </body>
 </html>
