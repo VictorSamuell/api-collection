@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   <a href="https://www.pokemon.com/br/pokedex/${data.name}" class="button2" target="_blank">${data.name.charAt(0).toUpperCase() + data.name.slice(1)} na Pokédex oficial</a>
               `;
 
-              
               pokemonInfoDiv.style.display = 'block'; 
               containerDiv.classList.add('expanded');
               searchAnotherButton.style.display = 'inline-block';
@@ -57,6 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
   });
 });
+
+
 
 /*
 document.getElementById('search-form').addEventListener('submit', async (event) => {
