@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa de Imagens</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+        <div class="container" id="container">
+
+            <h1>Pesquisa de Imagens</h1>
+            <p class="desc"> Digite oque deseja ver e veja a imagem</p>
+
+            <form id="search-image-form">
+
+                <input class="search-input" type="text" id="image-query" placeholder="Digite oque deseja ver" required>
+                <button type="submit" class="btn">Buscar Imagens</button>
+
+            </form>
+
+            <!--div do js que tera o result da imagem pela api-->
+            <div id="image-results"></div>
+
+
+            <div class="btn-container-search">
+
+            <a href="/" class="btn">Voltar para a página inicial</a>
+
+
+            <button id="search-another" class="btn" style="display: none;">Nova Pesquisa</button>
+            
+            </div>
+
+        </div>
+
+        <script src="/imgsearch.js"></script>
+
+</body>
+</html>

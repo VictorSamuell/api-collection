@@ -18,11 +18,19 @@ app.get('/search', (req, res) => {
   res.sendFile(path.join(__dirname, 'search.html'));
 });
 
-// Rota da API para buscar informações do Pokémon
+//imgsearch.html
+app.get('/imgsearch', (req, res) => {
+
+  res.sendFile(path.join(__dirname, 'imgsearch.html'));
+
+});
+
+
+// rota pra buscar informações do Pokémon
 app.get('/api/pokemon/:name', async (req, res) => {
-  const pokemonName = req.params.name;  // Recebe o nome do Pokémon da URL
+  const pokemonName = req.params.name;  
   try {
-    // Faz a requisição para a API com o axios
+    // requisição com axios da pokeapi
     const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
 
     const pokemonData = {
@@ -31,21 +39,58 @@ app.get('/api/pokemon/:name', async (req, res) => {
       height: response.data.height,
       weight: response.data.weight,
       types: response.data.types.map(type => type.type.name),
-      sprite: response.data.sprites.front_default  // Garantido que o sprite é retornado corretamente
+      sprite: response.data.sprites.front_default  
     };
 
-    // Envia as informações do Pokémon em formato JSON
+    // envia as info dos pokemon em json
     res.json(pokemonData);
   } catch (error) {
-    console.error('Erro ao buscar Pokémon:', error);  // Exibe o erro no console do servidor
-    res.status(404).json({ error: 'Pokémon não encontrado ou erro na comunicação com a PokéAPI' });  // Resposta mais específica
+    console.error('Erro ao buscar Pokémon:', error);  
+    res.status(404).json({ error: 'Pokémon não encontrado ou erro na comunicação com a PokéAPI' });  
   }
 });
 
-// Iniciando o servidor
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+const UNSPLASH_API_KEY = 'sy1TTq1vZy2mqgdwxgGIVBiO8TQawC2P5eDLJ6XuNpI';
+app.get('/api/images/:query', async (req, res) => {
+  const query = req.params.query;
+  try {
+    const response = await axios.get('https://api.unsplash.com/search/photos', {
+      params: {
+        query: query,
+        client_id: UNSPLASH_API_KEY,
+        per_page: 5
+      }
+    });
+
+    const images = response.data.results.map(image => ({
+      url: image.urls.small,
+      alt_description: image.alt_description
+    }));
+    
+    res.json(images);
+  } catch (error) {
+    console.error('Erro ao buscar imagens:', error);
+    res.status(404).json({ error: 'Erro ao buscar imagens do Unsplash' });
+  }
 });
+
+app.listen(port, () => {
+  console.log(`Servidor rodando em http://localhost:${port}`);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* 
