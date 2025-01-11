@@ -3,7 +3,8 @@ const path = require('path');
 const axios = require('axios');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000; //para meu colega vercel
+
 
 // usando o express para servir arquivos estaticos
 app.use(express.static(path.join(__dirname, 'public')));
@@ -75,9 +76,8 @@ app.get('/api/images/:query', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
+    console.log(`Server is running on http://localhost:${port}`);
 });
-
 
 
 
