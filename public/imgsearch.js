@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     searchAnotherButton.addEventListener('click', () => {
         imageResults.innerHTML = '';
         imageQuery.value = '';
-        containerDiv.classList.remove('expanded');
+        containerDiv.classList.remove('expandedImg');
         searchAnotherButton.style.display = 'none';
     });
 
@@ -34,21 +34,21 @@ document.addEventListener('DOMContentLoaded', async () => {
                             </div>
                             `).join('');
 
-                    containerDiv.classList.add('expanded');
+                    containerDiv.classList.add('expandedImg');
                     searchAnotherButton.style.display = 'inline-block';
 
 
 
                     }else{
                         imageResults.innerHTML = '<p>Nenhuma imagem encontrada</p>';
-                        containerDiv.classList.remove('expanded');
+                        containerDiv.classList.remove('expandedImg');
 
                     }
 
             }catch(error){
                 console.error('Erro ao buscar imagens:', error);
                 imageResults.innerHTML = '<p>Erro ao buscar imagens. Tente novamente.</p>';
-                containerDiv.classList.remove('expanded');
+                containerDiv.classList.remove('expandedImg');
             }
 
         }

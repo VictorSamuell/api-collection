@@ -58,16 +58,29 @@ body {
     transition: height 0.6s ease-out; 
     box-sizing: border-box;
     
+    
 }
 .container.expanded{
 
+  max-height: 950px;
   height: 950px;
     
 
 }
 
+.container.expandedImg{
+
+  max-height: 900px;
+  height: 900px;
+
+}
+
+
+
+
 .container.expandedMovies{
 
+  max-height: 9000px;
   height: auto;
 
 
