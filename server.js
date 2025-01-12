@@ -21,9 +21,12 @@ app.get('/search', (req, res) => {
 
 //imgsearch.html
 app.get('/imgsearch', (req, res) => {
-
   res.sendFile(path.join(__dirname, 'imgsearch.html'));
+});
 
+//movies.html
+app.get('/movies', (req, res) => {
+  res.sendFile(path.join(__dirname, 'movies.html'));
 });
 
 
@@ -74,6 +77,45 @@ app.get('/api/images/:query', async (req, res) => {
     res.status(404).json({ error: 'Erro ao buscar imagens do Unsplash' });
   }
 });
+
+// Movies api route
+
+const TMDB_API_KEY = '0f58527433c25f837a04d309f9612e29';
+
+app.get('/api/movies', async (req, res) => {
+  const query = req.query.query; // Recebe o parâmetro de busca da URL
+
+  if (!query) {
+    return res.status(400).json({ error: 'Por favor, forneça um nome de filme.' });
+  }
+
+  try {
+    
+    const response = await axios.get('https://api.themoviedb.org/3/search/movie', {
+      params: {
+        api_key: '0f58527433c25f837a04d309f9612e29', //chave da API
+        language: 'pt-BR',
+        query: query, 
+        page: 1 
+      }
+    });
+
+    const movies = response.data.results.map(movie => ({
+      title: movie.title,
+      overview: movie.overview,
+      release_date: movie.release_date,
+      poster_path: movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : '' // URL completa da imagem
+    }));
+
+    res.json(movies); // Retorna os filmes encontrados
+  } catch (error) {
+    console.error('Erro ao buscar filmes:', error);
+    res.status(500).json({ error: 'Erro ao buscar filmes. Tente novamente mais tarde.' });
+  }
+});
+
+
+
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);

@@ -65,6 +65,15 @@ body {
     
 
 }
+
+.container.expandedMovies{
+
+  height: auto;
+
+
+
+}
+
 .container.no-transition {
   transition: none; 
 }
