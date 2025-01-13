@@ -5,14 +5,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     const containerDiv = document.getElementById('container');
     const searchAnotherButton = document.getElementById('search-another');
 
+    
     searchAnotherButton.addEventListener('click', () => {
         imageResults.innerHTML = '';
         imageQuery.value = '';
         containerDiv.classList.remove('expandedImg');
         searchAnotherButton.style.display = 'none';
     });
-
-
 
     searchForm.addEventListener('submit', async (event) => {
 

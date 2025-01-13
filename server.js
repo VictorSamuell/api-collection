@@ -83,7 +83,7 @@ app.get('/api/images/:query', async (req, res) => {
 const TMDB_API_KEY = '0f58527433c25f837a04d309f9612e29';
 
 app.get('/api/movies', async (req, res) => {
-  const query = req.query.query; // Recebe o parâmetro de busca da URL
+  const query = req.query.query; 
 
   if (!query) {
     return res.status(400).json({ error: 'Por favor, forneça um nome de filme.' });
@@ -93,7 +93,7 @@ app.get('/api/movies', async (req, res) => {
     
     const response = await axios.get('https://api.themoviedb.org/3/search/movie', {
       params: {
-        api_key: '0f58527433c25f837a04d309f9612e29', //chave da API
+        api_key: '0f58527433c25f837a04d309f9612e29', 
         language: 'pt-BR',
         query: query, 
         page: 1 
