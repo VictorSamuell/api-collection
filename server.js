@@ -104,10 +104,10 @@ app.get('/api/movies', async (req, res) => {
       title: movie.title,
       overview: movie.overview,
       release_date: movie.release_date,
-      poster_path: movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : '' // URL completa da imagem
+      poster_path: movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : '' 
     }));
 
-    res.json(movies); // Retorna os filmes encontrados
+    res.json(movies);// pega e retorna os filmes encontrados
   } catch (error) {
     console.error('Erro ao buscar filmes:', error);
     res.status(500).json({ error: 'Erro ao buscar filmes. Tente novamente mais tarde.' });
