@@ -4,7 +4,6 @@ const resultsContainer = document.getElementById('movie-results');
 const searchAnotherBtn = document.getElementById('search-another');
 const containerDiv = document.getElementById('container');
 
-
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const query = queryInput.value.trim();
@@ -31,7 +30,6 @@ form.addEventListener('submit', async (event) => {
             containerDiv.classList.remove('expandedMovies');
             return;
         }
-
         // Exibir os filmes encontrados
         movies.forEach(movie => {
             const movieElement = document.createElement('div');
@@ -46,7 +44,6 @@ form.addEventListener('submit', async (event) => {
 
             resultsContainer.appendChild(movieElement);
         });
-
         // Mostrar botão para nova pesquisa
         containerDiv.classList.add('expandedMovies');
         searchAnotherBtn.style.display = 'inline-block';
