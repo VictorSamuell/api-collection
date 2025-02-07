@@ -22,7 +22,6 @@ form.addEventListener('submit', async (event) => {
         if (!response.ok) {
             throw new Error('Erro ao buscar filmes. Tente novamente mais tarde.');
         }
-
         const movies = await response.json();
 
         if (movies.length === 0) {
@@ -39,11 +38,13 @@ form.addEventListener('submit', async (event) => {
             movieElement.classList.add('movie-card');
 
             movieElement.innerHTML = `
-                <h2>${movie.title}</h2>
+            <div class="movie-container">
+                <h2 class="movieTitle">${movie.title}</h2>
                 <p><strong>Sinopse:</strong> ${movie.overview || 'Sem descrição disponível.'}</p>
                 <p><strong>Data de lançamento:</strong> ${movie.release_date || 'Desconhecida'}</p>
                 ${movie.poster_path ? `<img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="Poster de ${movie.title}" class="movie-poster">` : ''}
-            `;
+            </div>
+`;
 
             resultsContainer.appendChild(movieElement);
         

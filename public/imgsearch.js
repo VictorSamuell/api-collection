@@ -36,7 +36,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                     containerDiv.classList.add('expandedImg');
                     searchAnotherButton.style.display = 'inline-block';
 
+                    setTimeout(() => {
+                        document.querySelectorAll('.image-result').forEach(img => img.classList.add('show'));
+                    }, 50);
 
+                        
 
                     }else{
                         imageResults.innerHTML = '<p>Nenhuma imagem encontrada</p>';

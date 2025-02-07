@@ -40,12 +40,19 @@ body {
     font-family: Arial, sans-serif;
     background-color: #999caf;
     color: #333;
+    height: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .container {
-    max-width: 800px;
+
+    width: 800px;
+    height: 400px;
     margin: 50px auto;
-    padding: 20px;
+    padding: 45px;
     background-color: #636a6e;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -53,7 +60,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 400px; 
     overflow: hidden; 
     transition: height 0.6s ease-out; 
     box-sizing: border-box;
@@ -70,8 +76,8 @@ body {
 
 .container.expandedImg{
 
-  max-height: 900px;
-  height: 900px;
+  max-height: 1000px;
+  height: 1000px;
 
 }
 
@@ -92,7 +98,7 @@ body {
 }
 
 .container_menu {
-    max-width: 800px;
+    
     margin: 50px auto;
     padding: 20px;
     background-color: #636a6e;
@@ -104,6 +110,8 @@ body {
     align-items: center;
     justify-content: center;
     height: 400px;
+    width: 800px;
+
 }
 
 .form-container{
@@ -197,6 +205,74 @@ a.btn:hover {
 
 
 }
+
+
+/*outros botões*/
+
+a.btnPoke {
+  text-decoration: none;
+  color: #181818;
+  background-color: #c9c7c7;
+  padding: 10px 20px;
+  border-radius: 3px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+a.btnPoke:hover {
+  background-color: #dbb404;
+  color:#f8f8f8;
+  transform: scale(1.1);
+}
+
+.btnPoke{
+
+  padding: 10px 20px;
+  margin: 20px;
+  font-size: 1rem;
+  background-color: #c9c7c7;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+
+}
+
+/**/
+
+a.btnFilm {
+  text-decoration: none;
+  color: #181818;
+  background-color: #c9c7c7;
+  padding: 10px 20px;
+  border-radius: 3px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+a.btnFilm:hover {
+  background-color: #8f0707;
+  color:#f8f8f8;
+  transform: scale(1.1);
+}
+
+.btnFilm{
+
+  padding: 10px 20px;
+  margin: 20px;
+  font-size: 1rem;
+  background-color: #c9c7c7;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+
+}
+
+
+/**/
+
+
 
 .desc{
 
@@ -356,6 +432,7 @@ a.btn:hover {
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+    padding-top: 30px;
   }
 
 
@@ -374,15 +451,86 @@ a.btn:hover {
 
 
   .image-result img {
-    max-width: 100%; /* Não excede o tamanho do container */
-    max-height: 280px; /* Limita a altura máxima */
-    object-fit: cover; /* Ajusta a imagem para caber sem distorção */
-    display: block; /* Garante que não fique alinhada com o texto */
-    margin: 0 auto; /* Centraliza a imagem */
-    border-radius: 8px; /* (Opcional) Deixa as bordas arredondadas */
+    max-width: 100%; 
+    max-height: 280px; 
+    object-fit: cover; 
+    display: block; 
+    margin: 0 auto;
+    border-radius: 8px; 
   }
 
 
   
 
+  /* Est do card do movies.js*/
  
+  .movie-container {
+    background-color: #525a61; /* Cor da paleta */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    text-align: center;
+    color: #e0ddef;
+    font-family: Arial, sans-serif;
+}
+
+.movieTitle {
+    font-size: 1.8rem;
+    color: #e0ddef;
+    margin-bottom: 10px;
+}
+
+.movie-container p {
+    font-size: 1rem;
+    color: #cad5ed;
+    margin-bottom: 10px;
+}
+
+.movie-poster {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+}
+
+.movie-poster:hover {
+    transform: scale(1.05);
+}
+
+.movie-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #525a61;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    text-align: center;
+    color: #e0ddef;
+    font-family: Arial, sans-serif;
+
+
+
+}
+
+
+.image-result img {
+  max-width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adiciona transição suave */
+}
+
+/* Efeito de hover para aumentar a escala e adicionar sombra */
+.image-result img:hover {
+  transform: scale(1.05); /* Aumenta a escala em 5% */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra suave */
+}
