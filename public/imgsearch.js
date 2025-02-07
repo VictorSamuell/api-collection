@@ -26,7 +26,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                 if(imagens.length > 0){
 
-                    imageResults.innerHTML = imagens.map(image => `
+                    const tresimagens = imagens.slice(0, 3);
+
+                    imageResults.innerHTML = tresimagens.map(image => `
                         <div class="image-result">
                             <img src="${image.url}" alt="${image.alt_description || 'Imagem sem descrição'}">
                             
