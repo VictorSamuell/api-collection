@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const axios = require('axios');
+require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3000; //para meu colega vercel
@@ -30,6 +31,7 @@ app.get('/movies', (req, res) => {
 });
 
 
+
 // rota pra buscar informações do Pokémon
 app.get('/api/pokemon/:name', async (req, res) => {
   const pokemonName = req.params.name;  
@@ -54,7 +56,10 @@ app.get('/api/pokemon/:name', async (req, res) => {
   }
 });
 
-const UNSPLASH_API_KEY = 'sy1TTq1vZy2mqgdwxgGIVBiO8TQawC2P5eDLJ6XuNpI';
+
+//api de imagens
+
+const UNSPLASH_API_KEY = process.env.UNSPLASH_API_KEY;
 app.get('/api/images/:query', async (req, res) => {
   const query = req.params.query;
   try {
@@ -80,7 +85,7 @@ app.get('/api/images/:query', async (req, res) => {
 
 // Movies api route
 
-const TMDB_API_KEY = '0f58527433c25f837a04d309f9612e29';
+const TMDB_API_KEY = process.env.TMDB_API_KEY;
 
 app.get('/api/movies', async (req, res) => {
   const query = req.query.query; 
@@ -90,16 +95,17 @@ app.get('/api/movies', async (req, res) => {
   }
 
   try {
-    
+    //api de filmes get com axios
     const response = await axios.get('https://api.themoviedb.org/3/search/movie', {
       params: {
-        api_key: '0f58527433c25f837a04d309f9612e29', 
+        api_key: TMDB_API_KEY, 
         language: 'pt-BR',
         query: query, 
         page: 1 
       }
     });
 
+    //criação do mapa de acordo com o movie
     const movies = response.data.results.map(movie => ({
       title: movie.title,
       overview: movie.overview,
