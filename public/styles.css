@@ -1,16 +1,3 @@
-.color1 {color: #060606;}
-.color2 {color: #191d24;}
-.color3 {color: #36364b;}
-.color4 {color: #585975;}
-.color5 {color: #7c82a8;}
-
-.color1 {color: #06070c;}
-.color2 {color: #262e30;}
-.color3 {color: #46525e;}
-.color4 {color: #72838f;}
-.color5 {color: #9fbfc8;}
-
-
 /*paleta atual*/
 .color1 {color: #000000;}
 .color2 {color: #19111d;}
@@ -19,15 +6,12 @@
 .color5 {color: #e0ddef;}
 
 #root{
-
 --branco : #fff;
 --preto :#120907;
 --preto_menos_escuro :#182140;
 --azul_roxo :#4f5a93;
 --rosa :#8b9be7;
 --branco :#cad5ed;
-
-
 }
 
 * {
@@ -426,7 +410,6 @@ a.btnFilm:hover {
   
   /*#009087 cor ciano do botao*/
 
-
   .btn-container-search{
     display: flex;
     justify-content: center;
@@ -434,7 +417,6 @@ a.btnFilm:hover {
     margin-bottom: 20px;
     padding-top: 30px;
   }
-
 
   #image-results {
     display: flex;
@@ -458,9 +440,6 @@ a.btnFilm:hover {
     margin: 0 auto;
     border-radius: 8px; 
   }
-
-
-  
 
   /* Est do card do movies.js*/
  
@@ -517,8 +496,6 @@ a.btnFilm:hover {
 
 
 }
-
-
 
 #image-results {
   display: flex;

@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const imageResults = document.getElementById('image-results');
     const containerDiv = document.getElementById('container');
     const searchAnotherButton = document.getElementById('search-another');
-
     
     searchAnotherButton.addEventListener('click', () => {
         imageResults.innerHTML = '';
