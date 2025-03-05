@@ -21,16 +21,6 @@ API Collection é um projeto que facilita o acesso e a organização de APIs par
 2. Navegue pela lista de APIs disponíveis
 3. Clique em uma API para ver mais detalhes
 
-## Contribuição
-Se desejar contribuir com o projeto, siga os passos:
-1. Faça um fork do repositório
-2. Clone o repositório localmente
-   ```sh
-   git clone https://github.com/SeuUsuario/api-collection.git
-   ```
-3. Faça as alterações desejadas
-4. Envie um pull request
 
-## Contato
-Para mais informações ou sugestões, entre em contato pelo GitHub: [VictorSamuell](https://github.com/VictorSamuell)
+
 
