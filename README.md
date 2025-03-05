@@ -5,12 +5,6 @@
 ## Descrição
 API Collection é um projeto que facilita o acesso e a organização de APIs para diferentes finalidades. A plataforma permite que desenvolvedores encontrem informações sobre APIs populares e explorem suas funcionalidades de maneira simplificada.
 
-## Funcionalidades
-- Listagem de APIs populares
-- Detalhes e documentação sobre cada API
-- Interface intuitiva e responsiva
-- Pesquisa rápida por APIs
-
 ## Tecnologias Utilizadas
 - **Frontend:** HTML, CSS, JavaScript
 - **Backend:** Node.js, Express
